@@ -1,0 +1,17 @@
+
+
+
+{% extends 'base.html' %}
+{% block content%} 
+ 
+
+        <div id="page-wrapper">
+            <div class="row">
+			 	<form method='POST' >{% csrf_token %}
+			 		
+			 		<p>are you sure you want to Book blood Type <b>{{obj.bloodType}}</b> stored at a place called <b>{{obj.storgeArea}}</b> donated By  <b>{{obj.donatedBy}}</b> </p>
+			 		<p><input type="submit" value='yes'/> <a href="{% url 'search2'%}">cancel</a></p>
+			 	</form> 	
+	 	</div>
+	 </div>
+	 {% endblock%}

@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+{% block content %}
+	<div class='container'>
+		<div class="row">
+           
+                       <div class="alert alert-success">
+                                                 THIS page is for admins only
+                                            </div> 
+                       <table style="width:70%">
+		  <tr>
+		    <th>Id</th>
+		    <th>bloodType</th>
+		    <th>dateOfStorage</th>
+		    <th>storgeArea</th>
+		    <th>donatedBy</th>
+		    <th>booked</th>
+		  </tr>
+		  {% for object in users %}
+		  <tr>
+		    <td>{{ forloop.counter}}</td>
+		    <td>{{ object.bloodType}}</td>
+		    <td>{{ object.dateOfStorage}}</td>
+		    <td>{{ object.storgeArea}}</td>
+		    <td>{{ object.donatedBy}}</td>
+		    <td>{{ object.booked}}</td>
+		  </tr>
+		  {% endfor%}
+		</table> 
+                            
+                        
+                    </div>
+                </div>
+                
+                <!-- /.col-lg-4 -->
+            </div>
+	</div>
+{% endblock %}

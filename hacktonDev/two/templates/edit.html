@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="container">
+	<h2>welcome {{request.user }} you have now logged in</h2>
+	<p>add information about you</p>
+
+	{% load crispy_forms_tags %}
+        <form method="POST" >
+          <!--
+                    {% csrf_token %}
+                     username: <input class="form-control" value="{{ user.username }}">
+                     Location: <input class="form-control" value="{{ user.profile.location }}"> 
+                      donations :<input class="form-control" value="{{ user.profile.donations }}"> 
+                     requests  :  <input class="form-control" value="{{ user.profile.requests }}">
+                      bloodtype :<input class="form-control" value="{{ user.profile.bloodtype }}"> 
+                      email   :<input class="form-control"  value="{{ user.email }}">
+                      uniq_id : <input class="form-control" value="{{ user.profile.uniq_id }}">
+                      birth_date: <input class="form-control" type='date' value="{{ user.profile.birth_date }}">
+          --->
+          {% csrf_token %}
+          {{ user_form.as_p }}
+          {{ profile_form.as_p }}
+
+                      
+
+                    
+              <button class="btn btn-primary btn-lg btn-lg" type='submit' >submit</button> 
+        </form>
+      </div>
+	
+{% endblock %}

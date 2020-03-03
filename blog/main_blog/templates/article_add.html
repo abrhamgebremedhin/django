@@ -1,0 +1,42 @@
+
+{% extends 'base.html' %}
+{% block content%} 
+
+    <div id="wrapper"> 
+
+        <div id="page-wrapper"> 
+             
+            <!-- /.row -->
+           <div class="row">
+                <div class="col-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Article content
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-12"> 
+                                    {% load crispy_forms_tags %}
+                                    <form method="POST" >
+                                                {% csrf_token %}
+                                                {{ form|crispy}}
+                                          <div class="alert alert-success">
+                                                 #<b>NOTE</b>-if you publish this article it will be publicly avilable, but if not published only admins will access it in the unpublished page 
+                                            </div> 
+                                                   
+                                                
+                                        
+                                        <button class="btn btn-primary btn-lg btn-lg" type='submit' >submit</button> 
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+        <!-- /#page-wrapper -->
+        </div>
+    </div>
+</div>
+    <!-- /#wrapper -->
+
+     {%endblock%}

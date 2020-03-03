@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+{% block content %}
+	<div class='container'>
+		<form method="get">
+    {{ filter.form.as_p }}
+    <button type="submit">Search</button>
+  </form>
+  <ul>
+  <table style="width:70%">
+      <tr>
+        <th>Id</th>
+        <th>bloodType</th>
+        <th>dateOfStorage</th>
+        <th>storgeArea</th>
+        <th>donatedBy</th>
+        <th>booked</th>
+        <th>request</th>
+      </tr>
+      {% for object in filter.qs%} 
+      <tr>
+              
+        <td>{{ forloop.counter}}</td>
+        <td>{{ object.bloodType}}</td>
+        <td>{{ object.dateOfStorage}}</td>
+        <td>{{ object.storgeArea}}</td>
+        <td>{{ object.donatedBy}}</td>
+        <td>{{ object.booked}}</td>
+        <td> <a href="Book/{{object.id}}" class="btn btn-info">Book</a></td>
+      </tr> 
+      {% endfor%}
+    </table> 
+  </ul>
+	</div> 
+{% endblock %}

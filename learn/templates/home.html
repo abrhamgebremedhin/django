@@ -1,0 +1,14 @@
+{%extends 'base.html' %}
+<h1>home is not here</h1>
+	{%block content%}
+		<h1>home page</h1>
+		<form method='GET' >
+			<input name="face" type="text"/>
+		</form>
+		{{var1}}</br>{{var2}}
+		<ul>
+		{% for x in var3 %}
+			<li>{{ x}}</li>
+		{% endfor %}
+		</ul>
+	{%endblock%}

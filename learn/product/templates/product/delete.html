@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	 <head>
+
+	 </head>
+	 <h2>Dynamic-code</h2>
+	 <body>
+	 	<form method='POST' action='.'>{% csrf_token %}
+	 		
+	 		<p>are you sure you want to delete <b>{{obj.title}}</b> </p>
+	 		<p><input type="submit" value='yes'/> <a href='../../'>cancel</a></p>
+	 	</form>
+	 </body>
+
+</html>

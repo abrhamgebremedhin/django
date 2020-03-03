@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	 <head>
+		<style>
+		table, th, td {
+		    border: 1px solid black;
+		    border-collapse: collapse;
+		}
+		th, td {
+		    padding: 5px;
+		}
+		</style>
+	</head>
+	 <h1>All-products</h1>
+	 <body>
+	 	
+	 	 <table style="width:70%">
+		  <tr>
+		    <th>Id</th>
+		    <th>Title</th>
+		    <th>view</th>
+		    <th>update</th>
+		    <th>delete</th>
+		  </tr>
+		  {% for object in obj %}
+		  <tr>
+		    <td>{{ object.id}}</td>
+		    <td>{{ object.title}}</td>
+		    <td><a href="/product/dynamic/{{ object.id}}/">view</a></td>
+		    <td><a href="/product/update/{{ object.id}}/">update</a></td>
+		    <td><a href="/product/delete/{{ object.id}}/">delete</a></td>
+		  </tr>
+		  {% endfor%}
+		</table> 
+	 </body>
+
+</html>

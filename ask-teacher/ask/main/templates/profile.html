@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content%}
+	<h2>your profile is ready {{request.user}}</h2>
+		{%if request.staff == 'on'  %}4
+			<h3>hi staff</h3>
+		{% elif request.admin %}
+			<h3>hi admin</h3>
+		{% elif request.student %}
+			<h3>hi student</h3>
+		{% elif request.teacher %}
+			<h3>hi teacher</h3>
+		{%endif%}
+	
+{% endblock %}

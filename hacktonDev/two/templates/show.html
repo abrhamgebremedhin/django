@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="container">
+	<h2>welcome {{request.user }} you have now logged in</h2>
+	<p>add information about you</p>
+
+	{% load crispy_forms_tags %}
+        <form method="POST" >
+                    {% csrf_token %}
+                      <li>Username: {{ user.username }}</li>
+                      <li>Location: {{ user.profile.location }}</li>
+                      <li>donations : {{ user.profile.donations }}</li>
+                      <li>requests  : {{ user.profile.requests }}</li>
+                      <li>bloodtype : {{ user.profile.bloodtype }}</li>
+                      <li>email   : {{ user.email }}</li>
+                      <li>uniq_id : {{ user.profile.uniq_id }}</li>
+                      <li>birth_date: {{ user.profile.birth_date }}</li>
+                      
+</ul> 
+                    
+              <button class="btn btn-primary btn-lg btn-lg" type='submit' >submit</button> 
+        </form>
+      </div>
+	
+{% endblock %}

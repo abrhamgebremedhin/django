@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+{% block content %}
+	<p>cool page</p>
+	{% if user.is_authenticated%}
+		{% for object in num.qs %}
+	      <tr>
+	        <td>{{ forloop.counter}}</td>
+		<p> you have given blood {{donations}} times and {{ request }} requests have ben made with your accout
+		{% endfor%}
+	{% else%}
+	<p>wellcome gust signup to be part of the family</p>
+	{%endif%}
+{% endblock %}

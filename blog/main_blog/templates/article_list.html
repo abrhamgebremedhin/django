@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends 'base.html' %}
+{% block content%} 
+    <div id="wrapper">
+
+               <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Articel_list</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+             
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Published</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            
+            
+         <div class="row">
+            {% for art in obj %}
+                <div class="col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                           <a href="/blog/read/{{ art.id}}"> {{ forloop.counter}} - {{ art.title}}</a>
+                        </div>
+                        <div class="panel-body">
+                            {{ art.content}}
+                        </div>
+
+                        <div class="panel-footer">
+                             {% if user.is_authenticated%}
+                            <a href="/blog/edit/{{ art.id}}" class="btn btn-info">Edit</a> 
+                            
+                            <a href="/blog/delete/{{ art.id}}" class="btn btn-danger">Delete</a> 
+                            {%endif%}
+                            
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- /.col-lg-4 -->
+            </div>
+             
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+
+{% endblock %}

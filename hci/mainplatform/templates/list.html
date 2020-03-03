@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+{% block content %} 
+        <div id="page-wrapper">
+            <div class="row">
+                {% for art in obj %}
+        <div class="col-lg-12">
+                <div class="col-lg-1">
+                </div>
+                <div class="col-lg-8">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading" "> 
+                            <h3 style="color:white;">{{ art.title}}</h3> 
+                        </div>
+                        <div class="panel-body">
+                            <div ><h4><b ">TO</b>:{{art.audience}} </h4></div>
+                            <br/>
+                            <p>{{ art.body}}</p>
+                        </div>
+                        <div class="panel-footer">
+                            <b>DATE</b>: {{ art.Date}} <b>POSTED_BY</b>:{{ art.postedBy}}
+                        </div>
+                    </div>
+                </div>
+            <div class="col-lg-3" style="color:#999966;">
+            </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+{% endblock %}

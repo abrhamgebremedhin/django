@@ -1,0 +1,17 @@
+ <!doctype html>
+ <html>
+	 <head>
+
+	 </head>
+	 <body>
+			<form action='form' method='POST'> {% csrf_token %}
+				<input placeholder="Title" type="text" name="title" /><br/>
+				<input placeholder="price" type="number" name="price" /><br/>
+				<input placeholder="description" type="text" name="description" /><br/>
+				<input type='submit' value='save'>
+				
+			</form>
+	</body>
+</html>
+		
+	
